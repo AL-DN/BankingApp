@@ -1,10 +1,12 @@
 import React from "react";
 import HeaderBox from "@/components/HeaderBox";
 import TotalBalanceBox from "@/components/TotalBalanceBox";
+import RightSideBar from "@/components/RIghtSIdeBar";
+
 
 const Home = () => {
   
-  const loggedIn = { firstName: "Alden" };
+  const loggedIn = { firstName: "Alden", lastName: "Sahi", email: "axs9247@gmail.com" };
 
   return (
     // *NOT A NATIVE TAILWIND CLASS
@@ -23,14 +25,20 @@ const Home = () => {
             accounts={[]}
             totalBanks={1}
             totalCurrentBalance={1250.35}
-
-
-          />
-
-         
+          /> 
         </header>
+
+        RECENT TRANSACTIONS
+        </div>
+
+        <RightSideBar 
+          user={loggedIn}
+          transactions={[]}
+          banks={[{},{}]}
         
-      </div>
+        />
+
+      
     </section>
   )
 }
