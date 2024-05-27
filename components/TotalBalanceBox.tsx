@@ -1,8 +1,8 @@
 import React from "react";
 import AnimatedCounter from './AnimatedCounter';
 import CountUp from 'react-countup'
-import { formatAmount } from "@/lib/utils";
-import { Doughnut } from "react-chartjs-2";
+//import { formatAmount } from "@/lib/utils";
+//import { Doughnut } from "react-chartjs-2";
 import DoughnutChart from "./DoughnutChart";
 
 // by default every component is a server component
