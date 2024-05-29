@@ -18,7 +18,7 @@ export default function RootLayout({
           <div className="root-layout">
             <Image
               src="/icons/logo.svg"
-              alt="menu icon"
+              alt="logo"
               width={30}
               height={30}
               />
@@ -28,7 +28,7 @@ export default function RootLayout({
           </div>
           {children}
         </div>
-
+        
         
     </main>
   );
