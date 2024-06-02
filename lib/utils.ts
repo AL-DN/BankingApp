@@ -3,6 +3,8 @@ import { type ClassValue, clsx } from "clsx";
 import qs from "query-string";
 import { twMerge } from "tailwind-merge";
 
+import { z } from "zod";
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -193,3 +195,24 @@ export const getTransactionStatus = (date: Date) => {
 
   return date > twoDaysAgo ? "Processing" : "Success";
 };
+
+// since both sign in/up use authForSchema it will try to validate
+//both therefore we must use a if-else
+export const authFormSchema = (type: string) => z.object({
+  //sign up
+  first: type ==='sign-in' ? z.string().optional() : z.string().min(3),
+  last: type ==='sign-in' ? z.string().optional() :z.string().min(3),
+  address1: type ==='sign-in' ? z.string().optional() :z.string().min(3).max(50),
+  state: type ==='sign-in' ? z.string().optional() :z.string().min(2).max(2),
+  zip: type ==='sign-in' ? z.string().optional() :z.string().min(3).max(6),
+  dob: type ==='sign-in' ? z.string().optional() :z.string().min(3),
+  ssn: type ==='sign-in' ? z.string().optional() :z.string().min(3),
+  // both
+  email: z.string().email(),
+  password: z.string().min(8),
+
+
+
+
+
+  })
