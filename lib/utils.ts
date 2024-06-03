@@ -200,12 +200,13 @@ export const getTransactionStatus = (date: Date) => {
 //both therefore we must use a if-else
 export const authFormSchema = (type: string) => z.object({
   //sign up
-  first: type ==='sign-in' ? z.string().optional() : z.string().min(3),
-  last: type ==='sign-in' ? z.string().optional() :z.string().min(3),
+  firstName: type ==='sign-in' ? z.string().optional() : z.string().min(3),
+  lastName: type ==='sign-in' ? z.string().optional() :z.string().min(3),
   address1: type ==='sign-in' ? z.string().optional() :z.string().min(3).max(50),
   state: type ==='sign-in' ? z.string().optional() :z.string().min(2).max(2),
-  zip: type ==='sign-in' ? z.string().optional() :z.string().min(3).max(6),
-  dob: type ==='sign-in' ? z.string().optional() :z.string().min(3),
+  city: type ==='sign-in' ? z.string().optional() :z.string().min(3).max(50),
+  postalCode: type ==='sign-in' ? z.string().optional() :z.string().min(3).max(6),
+  dateOfBirth: type ==='sign-in' ? z.string().optional() :z.string().min(3),
   ssn: type ==='sign-in' ? z.string().optional() :z.string().min(3),
   // both
   email: z.string().email(),
