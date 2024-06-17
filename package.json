@@ -17,6 +17,10 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "countup.js": "^2.8.0",
+<<<<<<< HEAD
+=======
+    "git": "^0.1.5",
+>>>>>>> 7e2c288 (on pc)
     "lucide-react": "^0.378.0",
     "next": "14.2.3",
     "node-appwrite": "^13.0.0",
